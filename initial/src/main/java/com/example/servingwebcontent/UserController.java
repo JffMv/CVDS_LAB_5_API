@@ -1,8 +1,10 @@
     package com.example.servingwebcontent;
 
+    import org.springframework.expression.spel.ast.NullLiteral;
     import org.springframework.stereotype.Controller;
     import org.springframework.ui.Model;
     import org.springframework.web.bind.annotation.GetMapping;
+    import org.springframework.web.bind.annotation.PathVariable;
     import org.springframework.web.bind.annotation.RequestParam;
     import org.springframework.web.client.RestTemplate;
     import org.springframework.web.servlet.ModelAndView;
@@ -10,8 +12,10 @@
     @Controller
     public class UserController {
         @GetMapping("/user")
-        public String user(@RequestParam(name = "id", required = false, defaultValue = "1") Integer id, Model model) {
-
+        public String user(@RequestParam(name = "id", required = false, defaultValue = "1") Integer id, Model model){
+        //@GetMapping("/user/{id}")
+        //public String user(@PathVariable(name = "id" ) Integer id, Model model){
+                //id = (id != null) ? id: 1;
                 String uri = "https://jsonplaceholder.typicode.com/todos/" + id;
                 RestTemplate restTemplate = new RestTemplate();
 
