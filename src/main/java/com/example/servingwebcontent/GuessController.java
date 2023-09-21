@@ -11,10 +11,6 @@ public class GuessController {
 
     @GetMapping("/guess")
     public String guessForm(Model model, int id) {
-        if (guess == null) {
-            // Inicializa el objeto guess si es nulo (puede hacerlo de manera más precisa según tu lógica de negocio).
-            guess = new Guess(id);
-        }
 
         model.addAttribute("guess", guess);
         return "guess";
@@ -32,5 +28,13 @@ public class GuessController {
         model.addAttribute("guess", guess);
 
         return "guess";
+    }
+    @GetMapping("/guess-reset")
+    public String reset(int id, Model model) {
+        System.out.println("Id:" + id);
+        guess = new Guess(id);
+
+        model.addAttribute("guess", guess);
+        return "guess.html";
     }
 }
