@@ -8,6 +8,7 @@ public class Guess {
     public Guess(int user) {
         Random rand = new Random();
         this.number_real = rand.nextInt(10)+1;
+        System.out.println("Número nuevo:" + this.number_real);
         this.user =user;
     }
     public void lose(){
