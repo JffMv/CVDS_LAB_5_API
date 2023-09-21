@@ -11,6 +11,10 @@ Thumbs.db
 # Build Artifacts
 
 *.gradle
+gradlelew.*
+gradlelew
+mvnw
+mvnw.cmd
 grandle/
 .gradle/
 build/
