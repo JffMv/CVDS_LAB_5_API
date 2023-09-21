@@ -18,10 +18,16 @@
     <form action="/guess" method="POST">
         <div class="form-group">
             <label for="number">Ingresa un número:</label>
-            <input type="number" class="form-control" id="number" name="number" placeholder="Escribe un número">
+            <input type="number" class="form-control" id="number" name="number" placeholder="Escribe un número" required>
         </div>
         <!-- Campo oculto para enviar el valor de user -->
         <button type="submit" class="btn btn-primary">Play</button>
+    </form>
+
+    <form action="/guess-reset" method="GET">
+        <input type="hidden" class="form-control" id="id" name="id" th:value="${guess.getUser()}">
+        <!-- Campo oculto para enviar el valor de user -->
+        <button type="submit" class="btn btn-primary">Reset</button>
     </form>
 </div>
 </body>
